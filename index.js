@@ -79,9 +79,9 @@ contributionsCard.innerHTML = `<p>${totalBackers.toLocaleString("en-US")}</p>`;
 
 // grab the amount raised card, then use reduce() to find the total amount raised
 const raisedCard = document.getElementById("total-raised");
-const totalRaised = GAMES_JSON.reduce((acc,game) => {
+const totalRaised = GAMES_JSON.reduce( (acc, game) => {
     return acc + game.pledged; 
-},0);
+}, 0);
 
 // set inner HTML using template literal
 
@@ -152,13 +152,24 @@ allBtn.addEventListener("click", showAllGames);
 const descriptionContainer = document.getElementById("description-container");
 
 // use filter or reduce to count the number of unfunded games
+let numUnfunded = GAMES_JSON.reduce( (acc, game) => {
+    return acc + (game.pledged < game.goal ? 1 : 0)
+}, 0);
 
 
+const totalGames = GAMES_JSON.length;
+const addS = (num) => num > 1 ? "s" : "";
+const keepEmpty = (num) => num > 1 ? "" : "s";
+const properThis = (num) => num > 1 ? "these" : "this";
 // create a string that explains the number of unfunded games using the ternary operator
 
+const descStr = `A total of $${totalRaised.toLocaleString("en-US")} has been raised for ${totalGames} game${addS(totalGames)}. Currently ${numUnfunded} game${addS(numUnfunded)} remain${keepEmpty(numUnfunded)} unfunded. We need your help to fund ${properThis(numUnfunded)} amazing game${addS(totalGames)}!`;
 
 // create a new DOM element containing the template string and append it to the description container
 
+const description = document.createElement("p");
+description.innerHTML = `${descStr}`;
+document.getElementById("description-container").appendChild(description);
 /************************************************************************************
  * Challenge 7: Select & display the top 2 games
  * Skills used: spread operator, destructuring, template literals, sort 
@@ -172,7 +183,14 @@ const sortedGames =  GAMES_JSON.sort( (item1, item2) => {
 });
 
 // use destructuring and the spread operator to grab the first and second games
+const [mostFunded, secondMostFunded, ...rest] = sortedGames;
 
 // create a new element to hold the name of the top pledge game, then append it to the correct element
+let mostFundedContainer = document.createElement("p");
+mostFundedContainer.textContent = mostFunded.name;
+firstGameContainer.appendChild(mostFundedContainer);
 
 // do the same for the runner up item
+let secondFundedContainer = document.createElement("p");
+secondFundedContainer.textContent = secondMostFunded.name;
+secondGameContainer.appendChild(secondFundedContainer);
