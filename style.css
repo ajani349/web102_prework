@@ -77,6 +77,10 @@ body {
     text-align: center;
 }
 
+#button-container button {
+    cursor: pointer;
+}
+
 button {
     font-family: 'Cabin';
     border: none;
