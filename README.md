@@ -4,7 +4,7 @@ Submitted by: **Ajani Levere**
 
 **Sea Monster Crowdfunding** is a website for the company Sea Monster Crowdfunding that displays information about the games they have funded.
 
-Time spent: **3** hours **20** mins spent in total
+Time spent: **8** hours mins spent in total
 
 ## Required Features
 
@@ -19,6 +19,9 @@ The following **optional** features are implemented:
 
 * [ ] List anything else that you can get done to improve the app functionality!
 * [X] Changing page background color, positioning, and color of title text
+* [X] Can search for a game, using Fuse API for near matches
+* [X] Modal popup as a result for searching a game, displaying how close a game is to its goal
+* [X] Modal popup shows donate button if pledge amount is less than goal
 
 ## Video Walkthrough
 
@@ -37,7 +40,11 @@ GIF created with ...
 
 Describe any challenges encountered while building the app.
 
-Researched "header" tag as a more visually appealing way to present game name and description.
+Researched "header" tag as a more visually appealing way to present game name and description in the cards.
+
+Implementing Fuse.js was challenging to do locally, but setting the fuse object as a global variable within the file made it able to be accessed across all JS files. As a result, I was able to use it in search.js file for searching for a game.
+
+I also had some challenges with using flexbox in the modal to arrange the information how I wanted it to. By experimenting and playing around with it, it came out how I wanted.
 
 ## License
 

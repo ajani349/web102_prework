@@ -3,23 +3,53 @@
 body {
     font-family: 'Cabin';
     background-color: #529db7;
-    /*80b2ef ; 758190 ; #5e2c62 ; #529db7*/
+    /*80b2ef ; 758190 ; #5e2c62 ; #529db7 ... cjheck colorkit.co*/
 }
 
 #tentacles {
     width: 50px;
 }
+#search-container{
+    gap: 5px;
+}
+
+#searchbar {
+    height: 32px;
+    width: 150px;
+    font-family: 'Cabin';
+    padding-left: 5px;
+}
+
+#search-btn {
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+}
+
+#search-icon {
+    width: 22px;
+}
+
+input {
+    border-radius: 5px;
+}
 
 .header {
     display: flex;
     background-color: rgb(44, 84, 98);
-    justify-content: center;
     padding: 1%;
     align-items: center;
     margin-left: -10px;
     margin-right: -10px;
     margin-top: -10px;
     color: whitesmoke;
+    justify-content: space-between;
+}
+
+.header div {
+    display: flex;
+    align-items: center;
 }
 
 .stats-container {
@@ -66,6 +96,7 @@ body {
     text-align: center;
     border-radius: 7px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
 }
 
 .game-card:hover {
@@ -87,4 +118,104 @@ button {
     padding: 1%;
     margin: 1%;
     border-radius: 7px;
+}
+
+.modal {
+  display: none; 
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+.close:hover,
+.close:focus {
+color: black;
+text-decoration: none;
+cursor: pointer;
+}
+
+.modal-content {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-radius: 7px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%; /* Could be more or less, depending on screen size */
+  display: flex;
+  flex-direction: column;
+}
+
+.first-modal-msg {
+    margin-block-start: 0rem;
+}
+
+.result-name {
+    font-weight: bold;
+}
+
+.donate-button {
+    color: white;
+    background-color: rgb(116, 235, 72);
+    height: 40px;
+    width: 50%;
+    font-size: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.donate-button:hover {
+    background-color: rgb(94, 195, 58);
+    cursor: pointer;
+}
+
+.modal-img {
+    width: 80%;
+    box-shadow: 0 0 10px #a5a5a5;
+    border-radius: 5px;
+}
+
+#modal-info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+
+.modal-money-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.pledge-backer-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.remove-top-pad {
+    margin-block-start: 0%;
+}
+
+.remove-bottom-pad {
+    margin-block-end: 0%;
+}
+
+h3 {
+    font-weight: normal;
 }

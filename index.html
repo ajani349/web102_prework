@@ -9,8 +9,14 @@
   <body>
     <!-- header row with logo -->
     <div class="header">
-        <img id="tentacles" src="assets/tentacles.png">
-        <h1 class="header-text">Sea Monster Crowdfunding</h1>
+        <div>
+            <img id="tentacles" src="assets/tentacles.png">
+            <h1 class="header-text">Sea Monster Crowdfunding</h1>
+        </div>
+        <div id="search-container">
+            <input id="searchbar" type="text" placeholder="Search for a game...">
+            <button id="search-btn" type="submit"><img id="search-icon" src="assets/search-icon-2048x2048-cmujl7en.png"/></button>
+        </div>
     </div>
 
     <!-- background info about company -->
@@ -59,6 +65,20 @@
 
     </div>
 
+    <div id="search-modal" class="modal">
+        
+        <div class="modal-content">  
+            <div id="modal-header">
+                <span id="close-btn" class="close">&times;</span>
+            </div>
+            <div id="modal-info">
+                
+            </div>
+        </div>
+    </div>
+
     <script type="module" src="index.js"></script>
+    <script src="fuse.js"></script>
+    <script type="module" src="search.js" defer></script>
   </body>
 </html>
