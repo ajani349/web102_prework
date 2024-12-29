@@ -40,7 +40,7 @@ searchButton.addEventListener("click", () => {
 
     const searchResults = fuse.search(searchbarText);
     if (searchResults.length === 0) {
-        handleInvalidSearch();
+        handleInvalidSearch(searchbarText);
     } 
     else {
         const {item, refIndex, score} = searchResults[0];
@@ -93,7 +93,7 @@ function handleNearMatch(score) {
     }
 }
 
-function handleInvalidSearch() {
+function handleInvalidSearch(searchbarText) {
     const searchStatus = document.createElement("p");
     searchStatus.classList.add("first-modal-msg");
     searchStatus.innerHTML = `There wasn't a game that matched the query <strong>${searchbarText}</strong>.
