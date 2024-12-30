@@ -25,9 +25,9 @@ The following **optional** features are implemented:
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented features:
+Here's a walkthrough of implemented features (excuse the pixelation of the image, it's due to the GIF compression):
 
-![](https://github.com/ajani349/web102_prework/blob/main/assets/Demo.gif)
+![Video Walkthrough](https://github.com/ajani349/web102_prework/blob/main/assets/Demo.gif)
 <img src='./assets/DEMO.gif' title='Video Walkthrough' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
